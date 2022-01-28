@@ -24,3 +24,12 @@ examples thus some of the code is Copyright © 2001-2013 Python
 Software Foundation; All Rights Reserved under the PSF license (GPL
 compatible) http://docs.python.org/2/library/socketserver.html
 
+This submission was created without collaboration from classmates.
+
+I referenced the following articles:
+* https://docs.python.org/3/library/os.path.html
+* https://docs.python.org/3/library/mimetypes.html
+* https://www.tutorialspoint.com/http/http_responses.htm
+* https://www.tutorialspoint.com/python/string_decode.htm
+* https://www.pythontutorial.net/python-basics/python-read-text-file/
+* https://stackoverflow.com/questions/3812849/how-to-check-whether-a-directory-is-a-sub-directory-of-another-directory
