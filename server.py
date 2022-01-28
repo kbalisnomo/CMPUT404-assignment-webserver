@@ -57,7 +57,8 @@ class MyWebServer(socketserver.BaseRequestHandler):
             path = path + "index.html"
         
         status = protocol + " 200 OK"
-        location_header = "Location: http://" + host + path
+        host, port = self.request.getsockname()
+        location_header = "Location: http://{}:{}{}".format(host, port, path) + "/"
         server_path = CWD + "www" + path
         content_type_header = "Content-Type: " + mimetypes.guess_type(server_path)[0]
         body = self.read_file_contents(server_path) + "\r\n"
@@ -67,7 +68,8 @@ class MyWebServer(socketserver.BaseRequestHandler):
 
     def return_301(self, host, path, protocol):
         status = protocol + " 301 Moved Permanently"
-        location_header = "Location: http://" + host + path + "/"
+        host, port = self.request.getsockname()
+        location_header = "Location: http://{}:{}{}".format(host, port, path) + "/"
         response = ("\r\n".join([status, location_header]) + "\r\n").encode()
         self.request.sendall(response)
 
