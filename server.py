@@ -35,6 +35,8 @@ class MyWebServer(socketserver.BaseRequestHandler):
 
     allowed_methods = ["GET"]
     
+    # In order to check if a directory is a sub directory of another one
+    # https://stackoverflow.com/questions/3812849/how-to-check-whether-a-directory-is-a-sub-directory-of-another-directory
     def in_server_directory(self, file, directory):
         # Make both absolute
         directory = os.path.join(os.path.realpath(directory), '')
